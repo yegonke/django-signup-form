@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>NHC|Login</title>
+<link rel="stylesheet"  href="{% static 'engine/reg/login.css' %}"/>
+      <style>
+
+</style>
+
+    <script src="js/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>YEGON@<span>NHC</span></div>
+		</div>
+		<br>
+		<div class="login">
+		<!-- templates/registration/login.html -->
+		{% block title %}Login{% endblock %}
+
+		{% block content %}
+		<h2>Login</h2>
+		<form method="post">
+		  {% csrf_token %}
+		  {{ form.as_p }}
+		 <button type="submit">Login</button>
+		<a href="\signup"><button>Sign Up</button></a>
+		</form>
+		{% endblock %}
+		</div>
+
+</body>
+
+</html>
